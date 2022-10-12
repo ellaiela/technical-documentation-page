@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Technical Documentation Page</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+ <nav id="navbar">
+      <header>CSS Documentation</header>
+      <ul class="navigation">
+        <li><a href="#Introduction" class="nav-link">Introduction</a></li>
+        <li><a href="#CSS_basics" class="nav-link">CSS basics</a></li>
+        <li><a href="#CSS_building_blocks" class="nav-link">CSS building blocks</a></li>
+        <li><a href="#CSS_styling_text" class="nav-link">CSS styling text</a></li>
+        <li><a href="#CSS_layout" class="nav-link">CSS layout</a></li>
+        <li><a href="#Use_CSS_to_solve_common_problems" class="nav-link">Use CSS to solve common problems</a></li>
+        <li><a href="#CSS_reference" class="nav-link">CSS reference</a></li>
+      </ul>
+    </nav>
+    
+    <main id="main-doc">
+      <section id="Introduction" class="main-section">
+        <header>Introduction</header>
+        <article><p><strong>Cascading Style Sheets (CSS)</strong> is a stylesheet language used to describe the presentation of a document written in HTML or XML (including XML dialects such as SVG, MathML or XHTML). CSS describes how elements should be rendered on screen, on paper, in speech, or on other media.</p> 
+          
+          <p>CSS is among the core languages of the open web and is standardized across Web browsers according to W3C specifications. Previously, the development of various parts of CSS specification was done synchronously, which allowed the versioning of the latest recommendations. You might have heard about CSS1, CSS2.1, or even CSS3. There will never be a CSS3 or a CSS4; rather, everything is now CSS without a version number.</p>
+        
+        </article>
+      </section>
+      <section id="CSS_basics" class="main-section">
+        <header>CSS basics</header>
+        <article>Like HTML, CSS is not a programming language. It's not a markup language either. CSS is a style sheet language. CSS is what you use to selectively style HTML elements. For example, this CSS selects paragraph text, setting the color to red: 
+          <code>
+            p {
+              color: red;
+              }
+          </code>
+          Let's try it out! Using a text editor, paste the three lines of CSS (above) into a new file. Save the file as <strong>style.css</strong> in a directory named styles.
+
+To make the code work, we still need to apply this CSS (above) to your HTML document. Otherwise, the styling won't change the appearance of the HTML.
+        <ol>
+          <li>Open your <strong>index.html</strong> file. Paste the following line in the head (between the <head> and </head> tags): <code>&ltlink href="styles/style.css" 
+      rel="stylesheet"/>
+</code></li>
+          <li>Save index.html and load it in your browser. If your paragraph text is red, congratulations! Your CSS is working.</li>
+        </ol>
+        <h3>Anatomy of a CSS ruleset</h3>
+        Let's dissect the CSS code for red paragraph text to understand how it works: <br><br>
+        <img src="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics/css-declaration-small.png" alt="css ruleset"> <br><br>
+
+        The whole structure is called a <strong>ruleset</strong>. (The term ruleset is often referred to as just rule.) Note the names of the individual parts:
+      <ul>
+        <li class="blocks"><p><strong>Selector</strong><br>This is the HTML element name at the start of the ruleset. It defines the element(s) to be styled (in this example, &ltp> elements). To style a different element, change the selector.</p></li>
+        <li class="blocks"><p><strong>Declaration</strong><br>This is a single rule like <code>color: red;</code>. It specifies which of the element's properties you want to style.</p></li>
+        <li class="blocks"><p><strong>Properties</strong><br>These are ways in which you can style an HTML element. (In this example, <em>color</em> is a property of the &ltp> elements.) In CSS, you choose which properties you want to affect in the rule.</p></li>
+        <li class="blocks"><p><strong>Property Value</strong><br>To the right of the property—after the colon—there is the <em>property value</em>. This chooses one out of many possible appearances for a given property. (For example, there are many color values in addition to red.)</p></li>
+        <p style="background-color: rgb(250,222, 140); display: inline; padding: 2px 10px;">Note the other important parts of the syntax:</p>
+        <li style="list-style: disc;">Apart from the selector, each ruleset must be wrapped in curly braces. ({})</li>
+        <li style="list-style: disc;">Within each declaration, you must use a colon (:) to separate the property from its value or values.</li>
+        <li style="list-style: disc;">Within each ruleset, you must use a semicolon (;) to separate each declaration from the next one. ({})</li>
+        <p>To modify multiple property values in one ruleset, write them separated by semicolons, like this: 
+          <code>p {
+  color: red;
+  width: 500px;
+  border: 1px solid black;
+  }</code> You can also select multiple elements and apply a single ruleset to all of them. Separate multiple selectors by commas. For example:
+          <code>p,
+li,
+h1 {
+  color: red;
+}</code> There are many different types of selectors. The examples above use element selectors, which select all elements of a given type. But we can make more specific selections as well. There are many more selectors to discover. To learn more, see the MDN <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors">Selectors guide</a>.
+        </p>
+      </ul>
+        </article>
+      </section>
+      <section id="CSS_building_blocks" class="main-section">
+        <header>CSS building blocks</header>
+        <article>This section contains the following articles, which cover the most essential parts of the CSS language.
+             <ul>
+               <li class="blocks"><p><a class="mdn" href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance">Cascade and Inheritance</a><br>The aim of this article is to develop your understanding of some of the most fundamental concepts of CSS — the cascade, specificity, and inheritance — which control how CSS is applied to HTML and how conflicts are resolved.</p></li>
+                <li class="blocks"><p><a class="mdn" href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors">CSS Selectors</a><br>There are a wide variety of CSS selectors available, allowing for fine-grained precision when selecting elements to style. In this article and its sub-articles, we'll run through the different types in great detail, seeing how they work.</p></li>
+                <li class="blocks"><p><a class="mdn" href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model">The Box Model</a><br>Everything in CSS has a box around it, and understanding these boxes is key to being able to create layouts with CSS, or to align items with other items. In this article, we will take a proper look at the CSS Box Model, in order that you can move onto more complex layout tasks with an understanding of how it works and the terminology that relates to it.</p></li>
+                <li class="blocks"><p><p><a class="mdn" href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Backgrounds_and_borders">Background and Borders</a><br>From adding gradients, background images, and rounded corners, backgrounds and borders are the answer to a lot of styling questions in CSS.</p></li>
+               <li class="blocks"><p><p><a class="mdn" href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model">Handling Different Text Directions</a><br>In recent years, CSS has evolved in order to better support different directionality of content, including right-to-left but also top-to-bottom content (such as Japanese) — these different directionalities are called writing modes. As you progress in your study and begin to work with layout, an understanding of writing modes will be very helpful to you, therefore we will introduce them in this article.</p></li>
+               <li class="blocks"><p><p><a class="mdn" href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model">Overflowing Content</a><br>Overflow is what happens when there is too much content to be contained comfortably inside a box. In this guide, you will learn what it is and how to manage it.</p></li>
+               <li class="blocks"><p><p><a class="mdn" href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model">CSS Values and Units</a><br>Every property used in CSS has a value or set of values that are allowed for that property. In this lesson, we will take a look at some of the most common values and units in use.</p></li>
+               <li class="blocks"><p><p><a class="mdn" href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model">Sizing Items in CSS</a><br>Understanding how big the different features in your design will be is important, and in this article, we will summarize the various ways elements get a size via CSS and define a few terms around sizing that will help you in the future.</p></li>
+               <li class="blocks"><p><a class="mdn" href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model">Images, Media and Form Elements</a><br>Images, other media, and form elements behave a little differently in terms of your ability to style them with CSS than regular boxes. Understanding what is and isn't possible can save some frustration, and this article will highlight some of the main things that you need to know.</p></li>
+               <li class="blocks"><p><a class="mdn" href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model">Styling Tables</a><br>Styling an HTML table isn't the most glamorous job in the world, but sometimes we all have to do it. This article provides a guide to making HTML tables look good, with some specific table styling techniques highlighted.</p></li>
+               <li class="blocks"><p><a class="mdn" href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model">Debugging CSS</a><br>Sometimes when writing CSS you will encounter an issue where your CSS doesn't seem to be doing what you expect. This article will give you guidance on how to go about debugging a CSS problem, and show you how the DevTools included in all modern browsers can help you find out what is going on.</p></li>
+               <li class="blocks"><p><a class="mdn" href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model">Organizing CSS</a><br>As you start to work on larger stylesheets and big projects you will discover that maintaining a huge CSS file can be challenging. In this article, we will take a brief look at some best practices for writing your CSS to make it easily maintainable, and some of the solutions you will find in use by others to help improve maintainability.</p></li>
+      </ul>
+         </article>
+      </section>
+      <section id="CSS_styling_text" class="main-section">
+        <header>CSS styling text</header>
+      </section>
+      <section id="CSS_layout" class="main-section">
+        <header>CSS layout</header>
+      </section>
+      <section id="Use_CSS_to_solve_common_problems" class="main-section">
+        <header>Use CSS to solve common problems</header>
+      </section>
+      <section id="CSS_reference" class="main-section">
+        <header>CSS reference</header>
+      </section>
+      
+    </main>
+</body>
+
+</html>
